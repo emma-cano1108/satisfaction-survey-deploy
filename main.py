@@ -143,7 +143,7 @@ def Star_Question(idx, onRatingChange, isReset): #Componente de pregunta de estr
         onRatingChange(idx, rating)
         
     return html.section( #Contenedor principal de la pregunta
-        html.h3(f"{questions[idx]["id"]} - {questions[idx]["text"]}"), html.br(), #Número y texto de la pregunta
+        html.h3(str(questions[idx]["id"]) + " - " + str(questions[idx]["text"])), html.br(), #Número y texto de la pregunta
         html.article({}, #Contenedor de las estrellas
             html.div({"class":"estrellas"},
                 html.img({"on_click":lambda x: handleStarClick(1),"src":not_selected if rating < 1 else selected, }),
