@@ -341,6 +341,7 @@ def QuestionsAndAnswers(answers_for_user):
 
 
 def AllResultsPage(onAllResultsChange):
+    show_answers = deepcopy(answers)
     return html.div({}, #Contenedor general (body)
                 html.main({},
                     html.link({"rel": "stylesheet", "href": "/static/styles.css"}),
@@ -361,7 +362,7 @@ def AllResultsPage(onAllResultsChange):
                     answer.get('q6_comment')
                     ] if comment),
                     html.br(), html.br()
-                ), answers)),
+                ), show_answers)),
                 html.button({"on_click":lambda x: onAllResultsChange(), },"Recoger otra respuesta ✉")
                 )
                 )
