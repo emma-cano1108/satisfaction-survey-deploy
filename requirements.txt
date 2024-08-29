@@ -1,7 +1,6 @@
 uvicorn
 fastapi
 reactpy
-websockets
 deepcopy
 statistics
 json
