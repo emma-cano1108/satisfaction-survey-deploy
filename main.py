@@ -320,7 +320,7 @@ def ResultsPage(onResultsChange, onAllResultsChange): #Componente de Página de 
                 html.br(), html.br(), html.br(), html.br(),
                 html.section({"style":{"display":"flex", "flex-direction":"row"}},
                     html.button({"class":"button_1", "on_click":lambda x: onResultsChange(), },"Recoger otra respuesta ✉"),
-                    html.button({"class":"button_1", "on_click":lambda x: onAllResultsChange(), },"Ver todas las respuestas ↗")
+                    #html.button({"class":"button_1", "on_click":lambda x: onAllResultsChange(), },"Ver todas las respuestas ↗")
                 )
                 
                 )
