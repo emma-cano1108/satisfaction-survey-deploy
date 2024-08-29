@@ -15,7 +15,6 @@ answers=[]
 
 @component #Componente principal
 def App():
-    print(answers)
     current_answer, set_current_answer = hooks.use_state({"id":1})
     reset, set_reset = hooks.use_state(None)
     is_valid, set_is_valid = hooks.use_state(None)
@@ -282,13 +281,9 @@ def ResultsPage(onResultsChange, onAllResultsChange): #Componente de Página de 
             positive_experience_list_element.append(j)
     if positive_experience_list_element and len(positive_experience_list_element) >= 4:
         positive_experience_list.append(positive_experience_list_element)
-    print(positive_experience_list)
     experience_percentage = round((len(positive_experience_list)/len(answers))*100,1)
         
 
-            
-    print(answers[0])
-    
 
 
     
