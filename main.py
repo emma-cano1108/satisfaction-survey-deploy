@@ -338,7 +338,7 @@ def QuestionsAndAnswers(answers_for_user):
     return html.section(
         *map(lambda question: html.div(
             html.h3(str(question["id"]) + " - " + str(question["text"])),
-            html.h4(f"Calificación: {answers_for_user["q"+str(question["id"])]}")
+            html.h4(f"Calificación: " + str(answers_for_user["q"+str(question["id"])]))
             ), questions)
         
     )
@@ -356,7 +356,7 @@ def AllResultsPage(onAllResultsChange):
                 html.p(),
                 html.ul({},
                 *map(lambda answer: html.li({"key":answer["id"]},
-                    html.h2(f"ENCUESTADO #{answer["id"]}"),
+                    html.h2("ENCUESTADO #"+str(answer["id"])),
                     QuestionsAndAnswers(answer),
                     
                     *(html.h4(comment) for comment in [
