@@ -196,7 +196,7 @@ def Radio_Question(idx, onRadioChange, onCommentChange, isReset): #Componente de
         
 
     return html.section(
-        html.h3(f"{questions[idx]["id"]} - {questions[idx]["text"]}"), html.br(),
+        html.h3(str(questions[idx]["id"]) + " - " + str(questions[idx]["text"])), html.br(),
         html.div({},
             html.label({},
                 html.input({"value":5 if idx != 3 else 0,"onchange":radioHandleChange,"type":"radio", "name":str(idx+1), "checked":False if isReset else None}), "Sí"), html.br(), html.br(),
@@ -215,7 +215,7 @@ def Open_Question(idx, onOpinionChange, isReset): #Componente de preguntas abier
         onOpinionChange(idx, e["target"]["value"])
 
     return html.section(
-                html.h3(f"{questions[idx]["id"]} - {questions[idx]["text"]}"), html.br(),
+                html.h3(str(questions[idx]["id"]) + " - " + str(questions[idx]["text"])), html.br(),
                 html.textarea({"value":opinion if not isReset else "","onchange":opinionHandleChange,"placeholder":"Ingrese aquí sus opiniones.", }), html.br(), html.br()
             )
 
@@ -337,7 +337,7 @@ comments_list = []
 def QuestionsAndAnswers(answers_for_user):
     return html.section(
         *map(lambda question: html.div(
-            html.h3(f"{question["id"]}. {question["text"]}"),
+            html.h3(str(question["id"]) + " - " + str(question["text"])),
             html.h4(f"Calificación: {answers_for_user["q"+str(question["id"])]}")
             ), questions)
         
